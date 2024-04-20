@@ -20,7 +20,14 @@
             color: #fff;
             overflow: auto;
             position: relative;
-            zoom: 100%; /* Set zoom level to 85% */
+            zoom: 100%; /* Set default zoom level */
+        }
+
+        /* Set size to 85% on mobile devices */
+        @media (max-width: 768px) {
+            body {
+                zoom: 85%;
+            }
         }
 
         /* Header Styles */
@@ -46,7 +53,7 @@
         }
 
         h2 {
-            color: #000000;
+            color: #ff8c00;
             font-size: 24px;
             margin-bottom: 10px;
         }
@@ -64,7 +71,7 @@
         }
 
         a:hover {
-            background-color: #000000;
+            background-color: #ff8c00;
         }
 
         /* Footer Styles */
@@ -82,7 +89,7 @@
         /* Button Styles */
         button {
             padding: 10px;
-            background-color: #000000;
+            background-color: #ff8c00;
             color: #fff;
             border: none;
             cursor: pointer;
@@ -96,7 +103,7 @@
         }
 
         button:hover {
-            background-color: #000000;
+            background-color: #ffad42;
         }
 
         /* Overlay Styles */
@@ -152,7 +159,7 @@
     <main>
         <section>
             <h2>NEWS</h2>
-            IM SO SRRY IT TOOK LONG BUT IM BACK IM NOT LAZY IT WAS TOOKEN DOWN
+            IM SO SRRY IT TOOK LONG BUT IM BACK
         </section>
 
         <section>
@@ -348,7 +355,6 @@
             "retina_detect": true
         });
     </script>
-
 </body>
 
 </html>
