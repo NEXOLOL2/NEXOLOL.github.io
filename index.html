@@ -11,15 +11,16 @@
     <title>Clever | Portal</title>
 
     <style>
+        /* Your existing CSS styles here */
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #0000006c;
             color: #8700b1;
-            overflow: auto; /* Allow scrolling */
-            zoom: 74%; /* Zoom out by 75% */
-            position: relative; /* Add position relative */
+            overflow: auto;
+            zoom: 74%;
+            position: relative;
         }
 
         header {
@@ -93,7 +94,7 @@
             justify-content: center;
             align-items: center;
             z-index: 1;
-            overflow: auto; /* Allow scrolling */
+            overflow: auto;
         }
 
         #overlay img {
@@ -122,32 +123,16 @@
         }
 
         body.overlay-active {
-            /* Remove overflow hidden */
             overflow: auto;
         }
 
-        /* Plexus effect styles */
-        body::after {
-            content: '';
+        #particles-js {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle, rgba(193, 0, 252, 0.1) 1%, rgba(0, 0, 0, 0) 70%);
-            background-size: 1000% 1000%;
-            animation: animatePlexus 20s linear infinite;
-            z-index: -1; /* Move behind other content */
-        }
-
-        @keyframes animatePlexus {
-            0% {
-                background-position: 0% 50%;
-            }
-
-            100% {
-                background-position: 100% 50%;
-            }
+            z-index: -1;
         }
     </style>
 </head>
@@ -164,12 +149,11 @@
         <section>
             <h2>NEWS</h2>
             IM SO SRRY IT TOOK LONG BUT IM BACK
-            </a>
         </section>
 
         <section>
             <h2>Games</h2>
-            <a href="https://www.makefun.online/gcenter/makefun/urlpc/GunsUp/" target="_blank">GunsUp</a> 
+           <a href="https://www.makefun.online/gcenter/makefun/urlpc/GunsUp/" target="_blank">GunsUp</a> 
             <a href="https://www.makefun.online/gcenter/makefun/urlpc/IdleStartupTycoon/" target="_blank">IdleStartupTycoon</a> 
             <a href="https://www.makefun.online/gcenter/makefun/urlpc/JoyRider/" target="_blank">Joy Rider</a> 
             <a href="https://www.makefun.online/gcenter/makefun/urlpc/ShootZ/" target="_blank">Shoot Z</a> 
@@ -236,6 +220,9 @@
         <p>I ALWAYS COME BACK</p>
     </footer>
 
+    <div id="particles-js"></div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
         function toggleVisibility() {
             var overlay = document.getElementById("overlay");
@@ -252,6 +239,118 @@
         function changeUrlToSlope3D() {
             // Add functionality if needed
         }
+
+        // Particle.js configuration
+        particlesJS('particles-js', {
+            "particles": {
+                "number": {
+                    "value": 80,
+                    "density": {
+                        "enable": true,
+                        "value_area": 860
+                    }
+                },
+                "color": {
+                    "value": "#8e44ad" // Purple color code
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0.9,
+                        "color": "#800080"
+                    },
+                    "polygon": {
+                        "nb_sides": 1
+                    },
+                    "image": {
+                        "src": "img/github.svg",
+                        "width": 100,
+                        "height": 100
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                        "speed": 1999,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 4,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#8e44ad", // Purple color code
+                    "opacity": 0.4,
+                    "width": 3 // Adjust line thickness
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 6,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": false, // Disable hover
+                        "mode": "repulse"
+                    },
+                    "onclick": {
+                        "enable": false, // Disable click
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 400,
+                        "line_linked": {
+                            "opacity": 9
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 99,
+                        "speed": 1
+                    },
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 9
+                    },
+                    "remove": {
+                        "particles_nb": 99
+                    }
+                }
+            },
+            "retina_detect": true
+        });
     </script>
 
 </body>
