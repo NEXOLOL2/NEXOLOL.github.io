@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+=<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -11,38 +11,43 @@
     <title>Clever | Portal</title>
 
     <style>
-        /* Your existing CSS styles here */
+        /* General Styles */
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #0000006c;
-            color: #8700b1;
+            background-color: #333;
+            color: #fff;
             overflow: auto;
-            zoom: 74%;
             position: relative;
         }
 
+        /* Header Styles */
         header {
             background-color: #8700b1;
-            color: #000000;
+            color: #fff;
             text-align: center;
             padding: 1em 0;
             font-size: 24px;
             text-transform: uppercase;
+            border-bottom: 2px solid #fff;
         }
 
+        /* Main Styles */
         main {
             max-width: 800px;
             margin: 20px auto;
+            padding: 0 20px;
         }
 
         section {
-            margin-bottom: 20px;
+            margin-bottom: 30px;
         }
 
         h2 {
-            color: rgb(74, 0, 158);
+            color: #ff8c00;
+            font-size: 24px;
+            margin-bottom: 10px;
         }
 
         a {
@@ -50,24 +55,34 @@
             margin-right: 10px;
             margin-bottom: 10px;
             text-decoration: none;
-            color: #8700b1;
-            transition: color 0.3s ease;
+            color: #fff;
+            background-color: #8700b1;
+            padding: 8px 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
         }
 
         a:hover {
-            color: rgb(90, 0, 163);
+            background-color: #ff8c00;
         }
 
-        iframe {
+        /* Footer Styles */
+        footer {
+            background-color: #8700b1;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+            position: fixed;
+            bottom: 0;
             width: 100%;
-            height: 200px;
-            border: 0;
+            border-top: 2px solid #fff;
         }
 
+        /* Button Styles */
         button {
             padding: 10px;
-            background-color: #8700b1;
-            color: #000000;
+            background-color: #ff8c00;
+            color: #fff;
             border: none;
             cursor: pointer;
             position: fixed;
@@ -80,9 +95,10 @@
         }
 
         button:hover {
-            background-color: #8700b1;
+            background-color: #ffad42;
         }
 
+        /* Overlay Styles */
         #overlay {
             display: none;
             position: fixed;
@@ -91,16 +107,16 @@
             width: 100%;
             height: 100%;
             background-color: rgba(0, 0, 0, 0.8);
-            justify-content: center;
-            align-items: center;
             z-index: 1;
             overflow: auto;
         }
 
         #overlay img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            display: block;
+            margin: 0 auto;
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
         }
 
         #closeButton {
@@ -108,24 +124,11 @@
             top: 10px;
             right: 10px;
             font-size: 20px;
-            color: #8700b1;
+            color: #fff;
             cursor: pointer;
         }
 
-        footer {
-            background-color: #b700ff;
-            color: #000000;
-            text-align: center;
-            padding: 1em 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-
-        body.overlay-active {
-            overflow: auto;
-        }
-
+        /* Particle JS Container Styles */
         #particles-js {
             position: fixed;
             top: 0;
@@ -153,8 +156,8 @@
 
         <section>
             <h2>Games</h2>
-           <a href="https://www.makefun.online/gcenter/makefun/urlpc/GunsUp/" target="_blank">GunsUp</a> 
-            <a href="https://www.makefun.online/gcenter/makefun/urlpc/IdleStartupTycoon/" target="_blank">IdleStartupTycoon</a> 
+            <a href="https://www.makefun.online/gcenter/makefun/urlpc/GunsUp/" target="_blank">GunsUp</a>
+           <a href="https://www.makefun.online/gcenter/makefun/urlpc/IdleStartupTycoon/" target="_blank">IdleStartupTycoon</a> 
             <a href="https://www.makefun.online/gcenter/makefun/urlpc/JoyRider/" target="_blank">Joy Rider</a> 
             <a href="https://www.makefun.online/gcenter/makefun/urlpc/ShootZ/" target="_blank">Shoot Z</a> 
             <a href="https://www.makefun.online/gcenter/makefun/urlpc/SurvivorIo/" target="_blank">Survivor Io</a> 
@@ -211,6 +214,7 @@
             <a href="https://www.makefun.online/gcenter/makefun/urlpc/ArmyDriver/" target="_blank">Army Drivers</a> 
         </section>
     </main>
+
     <div id="overlay" onclick="toggleVisibility()">
         <span id="closeButton">×</span>
         <img src="https://i.ytimg.com/vi/aUH0p_c-YFk/maxresdefault.jpg" alt="Hidden Image">
@@ -236,15 +240,11 @@
             }
         }
 
-        function changeUrlToSlope3D() {
-            // Add functionality if needed
-        }
-
         // Particle.js configuration
         particlesJS('particles-js', {
             "particles": {
                 "number": {
-                    "value": 80,
+                    "value": 130,
                     "density": {
                         "enable": true,
                         "value_area": 860
@@ -256,16 +256,11 @@
                 "shape": {
                     "type": "circle",
                     "stroke": {
-                        "width": 0.9,
+                        "width": 0.999,
                         "color": "#800080"
                     },
                     "polygon": {
                         "nb_sides": 1
-                    },
-                    "image": {
-                        "src": "img/github.svg",
-                        "width": 100,
-                        "height": 100
                     }
                 },
                 "opacity": {
@@ -279,25 +274,25 @@
                     }
                 },
                 "size": {
-                    "value": 3,
+                    "value": 0.9,
                     "random": true,
                     "anim": {
                         "enable": false,
                         "speed": 4,
-                        "size_min": 0.1,
+                        "size_min": 90.1,
                         "sync": false
                     }
                 },
                 "line_linked": {
                     "enable": true,
-                    "distance": 150,
+                    "distance": 199,
                     "color": "#8e44ad", // Purple color code
                     "opacity": 0.4,
-                    "width": 3 // Adjust line thickness
+                    "width": 2 // Adjust line thickness
                 },
                 "move": {
                     "enable": true,
-                    "speed": 6,
+                    "speed": 4,
                     "direction": "none",
                     "random": false,
                     "straight": false,
@@ -345,7 +340,7 @@
                         "particles_nb": 9
                     },
                     "remove": {
-                        "particles_nb": 99
+                        "particles_nb": 0
                     }
                 }
             },
